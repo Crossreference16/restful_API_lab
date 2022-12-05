@@ -1,5 +1,6 @@
 package com.example.task_01.controllers;
 
+import com.example.task_01.models.Celebration;
 import com.example.task_01.models.Greeting;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +20,14 @@ public class Controller {
 
 
     }
+
+    @GetMapping("/greeting/celebration")
+    public String xmasGreeting (
+            @RequestParam(value = "HappyHolidays") String hapHols) {
+        Celebration celebration = new Celebration(hapHols);
+        return celebration.getMessage();
+    }
+
 
 //    @GetMapping("/greeting")
 //    public ResponseEntity<Greeting>makeGreeting(){
