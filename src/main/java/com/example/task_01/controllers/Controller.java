@@ -12,9 +12,9 @@ public class Controller {
 
     @GetMapping("/greeting")
     public String myGreeting (
-            @RequestParam(value = "khalil") String khalilName,
-            @RequestParam(value = "ToD")String morningTimeOfDay){
-        Greeting greeting = new Greeting("Khalil", "morning");
+            @RequestParam(value = "khalil") String name,
+            @RequestParam(value = "ToD")String timeOfDay){
+        Greeting greeting = new Greeting(name, timeOfDay);
         return "Good " + greeting.getTimeOfDay() + ", " + " " + greeting.getName() + "!";
 
 
